@@ -1,16 +1,13 @@
 <script>
-import Button from "./Button.svelte";
+  import CustomButton from "./CustomButton.svelte";
 
-const label = 'ボタン'
-const user1 = {
-  firstName: 'sean',
-  id: '2378467',
-  bio: 'this is bio'
-}
+  function handleClick(event) {
+    console.log(event);
+    alert(event.detail);
+  }
 </script>
 
-<Button disabled {label} user = {user1}/>
+<CustomButton on:hello={handleClick} />
 
 <style>
-
 </style>

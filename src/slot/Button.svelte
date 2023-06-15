@@ -1,7 +1,7 @@
 <script>
-    export let label = ''
-    export let user;
-    export let disabled = false
+  export let label = "";
+  export let user;
+  export let disabled = false;
 </script>
 
 <button {disabled}>{label}</button>

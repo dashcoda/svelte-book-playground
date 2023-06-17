@@ -1,13 +1,18 @@
 <script>
-  import CustomButton from "./CustomButton.svelte";
+  let x = 1;
 
-  function handleClick(event) {
-    console.log(event);
-    alert(event.detail);
-  }
+  $: area = x * x;
+  $: volume = x * x * x;
 </script>
 
-<CustomButton on:hello={handleClick} />
+<div>
+  一辺の長さ：
+  <button on:click={() => (x = x - 1)} disabled={x <= 1}> - </button>
+  {x}m
+  <button on:click={() => (x = x + 1)}> + </button>
+</div>
+<div>面積：{area}m<sup>2</sup></div>
+<div>体積：{volume}m<sup>3</sup></div>
 
 <style>
 </style>
